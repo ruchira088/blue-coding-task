@@ -1,0 +1,29 @@
+{
+  "name": "blue-weather-widget",
+  "version": "1.0.0",
+  "description": "Blue technical test - weather widget",
+  "main": "",
+  "scripts": {
+    "test": "mocha test/suite.js",
+    "dev": "webpack-dev-server --content-base public/ --inline --hot --colors"
+  },
+  "author": "Ruchira Jayasekara <ruchira088@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
