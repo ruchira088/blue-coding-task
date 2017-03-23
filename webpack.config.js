@@ -8,6 +8,7 @@ module.exports = {
         filename: "bundle.js",
         publicPath: "/build/js/"
     },
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -27,7 +28,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            styles: path.join(__dirname, "app", "styles")
+            styles: path.join(__dirname, "app", "styles"),
+            services: path.join(__dirname, "app", "services")
         }
     },
     plugins: [

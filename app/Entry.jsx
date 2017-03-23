@@ -1,5 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import WidgetEditor from "./components/WidgetEditor.jsx"
+import WidgetContainer from "./components/WidgetContainer.jsx"
 
-ReactDOM.render(<WidgetEditor/>, document.getElementById("app"))
+ReactDOM.render(<WidgetContainer/>, document.getElementById("app"))

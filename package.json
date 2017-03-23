@@ -5,11 +5,12 @@
   "main": "",
   "scripts": {
     "test": "mocha test/suite.js",
-    "dev": "webpack-dev-server --content-base public/ --inline --hot --colors"
+    "dev": "webpack-dev-server --content-base public/ --inline --hot --colors --port 8000"
   },
   "author": "Ruchira Jayasekara <ruchira088@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.3",
     "classnames": "^2.2.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
