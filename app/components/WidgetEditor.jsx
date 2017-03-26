@@ -1,13 +1,15 @@
 import React from "react"
-import InputSection from "./InputSection.jsx"
-import RadioButtonGroup from "./RadioButtonGroup.jsx"
+import {browserHistory} from "react-router"
+import {addWidgetToStorage} from "services/storage"
+import InputSection from "./common/InputSection.jsx"
+import RadioButtonGroup from "./common/RadioButtonGroup.jsx"
 
 import "styles/widget-editor.scss"
 
-const UNIT_OPTIONS = [{label: "C", value: "celsius"}, {label: "F", value: "fahrenheit"}]
+const UNIT_OPTIONS = [{label: "C", value: "metric"}, {label: "F", value: "imperial"}]
 const WIND_OPTIONS = [{label: "On", value: true}, {label: "OFF", value: false}]
 
-export default React.createClass({
+export default  React.createClass({
 
     getInitialState()
     {
@@ -16,8 +18,8 @@ export default React.createClass({
 
         return {
             title: "",
-            unit: defaultUnitOption.value,
-            wind: defaultWindOption.value
+            units: defaultUnitOption.value,
+            showWind: defaultWindOption.value
         }
     },
 
@@ -29,9 +31,18 @@ export default React.createClass({
         }
     },
 
+    handleOkButtonClick(event)
+    {
+        const state = this.state
+
+        event.preventDefault()
+        addWidgetToStorage(state)
+        browserHistory.push("/")
+    },
+
     render()
     {
-        const {title, unit, wind} = this.state
+        const {title, units, showWind} = this.state
 
         return (
             <div className="widget-editor">
@@ -46,19 +57,25 @@ export default React.createClass({
 
                 <InputSection title="Unit" className="input-unit-section">
                     <RadioButtonGroup
-                        selectedValue={unit}
+                        selectedValue={units}
                         options={UNIT_OPTIONS}
-                        onChange={this.handleInputChange("unit")}
+                        onChange={this.handleInputChange("units")}
                     />
                 </InputSection>
 
                 <InputSection title="Wind" className="input-wind-section">
                     <RadioButtonGroup
-                        selectedValue={wind}
+                        selectedValue={showWind}
                         options={WIND_OPTIONS}
-                        onChange={this.handleInputChange("wind")}
+                        onChange={this.handleInputChange("showWind")}
                     />
                 </InputSection>
+
+                <div className="widget-editor-controls">
+                    <button onClick={this.handleOkButtonClick} type="button" className="widget-editor-button">
+                        OK
+                    </button>
+                </div>
             </div>
         )
     }

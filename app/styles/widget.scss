@@ -1,0 +1,57 @@
+.weather-widget
+{
+    width: 200px;
+    padding: 20px;
+    background-color: #F4F4F4;
+    border: 1px grey solid;
+
+    .weather-widget-header
+    {
+        .widget-title
+        {
+            text-transform: uppercase;
+        }
+    }
+
+    .weather-widget-body
+    {
+        padding: 10px 0;
+        display: flex;
+
+        .widget-left-column, .widget-right-column
+        {
+            padding: 10px;
+        }
+
+        .widget-left-column
+        {
+            flex: 2;
+
+            .weather-icon
+            {
+                height: 100%;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .widget-right-column
+        {
+            flex: 3;
+
+            .weather-info
+            {
+                .weather-location
+                {
+                    font-size: 20px;
+                }
+
+                .weather-temperature
+                {
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

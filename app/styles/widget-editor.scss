@@ -1,3 +1,17 @@
-.widget-editor {
+.widget-editor
+{
+    .input-section
+    {
+        display: block;
 
+        .input-section-title
+        {
+            display: block;
+        }
+
+        .input-section-field
+        {
+            display: flex;
+        }
+    }
 }

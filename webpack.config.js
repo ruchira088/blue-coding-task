@@ -1,12 +1,14 @@
 const path = require("path")
 const ExtractTextPlugin = require("extract-text-webpack-plugin")
 
+const appPath = path.join(__dirname, "app")
+
 module.exports = {
     entry: path.join(__dirname, "app", "Entry.jsx"),
     output: {
-        path: path.join(__dirname, "public", "build", "js"),
-        filename: "bundle.js",
-        publicPath: "/build/js/"
+        path: path.join(__dirname, "public", "build"),
+        filename: "js/bundle.js",
+        publicPath: "/build/"
     },
     devtool: "source-map",
     module: {
@@ -28,12 +30,13 @@ module.exports = {
     },
     resolve: {
         alias: {
-            styles: path.join(__dirname, "app", "styles"),
-            services: path.join(__dirname, "app", "services")
+            styles: path.join(appPath, "styles"),
+            services: path.join(appPath, "services"),
+            libs: path.join(appPath, "libs")
         }
     },
     plugins: [
-        new ExtractTextPlugin("styles.css")
+        new ExtractTextPlugin("css/styles.css")
     ]
 
 }

@@ -1,0 +1,42 @@
+.widget-home
+{
+    .widget-home-controls
+    {
+        .create-widget-button
+        {
+            background-color: black;
+            padding: 16px;
+            border-radius: 4px;
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+
+            &:hover
+            {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .widget-previews
+    {
+        display: flex;
+        max-width: 1000px;
+        margin-bottom: 20px;
+
+        .embed-code-container
+        {
+            flex: 2;
+
+            iframe
+            {
+                height: 200px;
+            }
+        }
+
+        .saved-widgets
+        {
+            flex: 1;
+        }
+    }
+}

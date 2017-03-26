@@ -1,6 +1,8 @@
 import React from "react"
 import RadioButton from "./RadioButton.jsx"
 
+import "styles/radio-button-group.scss"
+
 export default ({options, selectedValue, onChange}) =>
 {
     const radioButtons = options.map(({label, value}, index) =>

@@ -1,36 +1,64 @@
 import React from "react"
 import {getCurrentLocation} from "services/location"
 import {getWeather} from "services/weather"
+import {parseBoolean} from "libs/object"
+import configJson from "../../config.json"
+import Widget from "./Widget.jsx"
+
+import "styles/widget.scss"
 
 export default React.createClass({
 
     getInitialState()
     {
         return {
-            weatherData: null
+            city: undefined,
+            temperature: undefined,
+            icon: undefined,
+            wind: undefined
         }
     },
 
     componentDidMount()
     {
+        const {units, showWind} = this.getQueryParameters()
+
         getCurrentLocation()
             .then(({coords}) =>
             {
                 const {latitude, longitude} = coords
-                return getWeather(latitude, longitude)
+                return getWeather(latitude, longitude, units)
             })
-            .then(weather =>
+            .then(weatherData =>
             {
-                console.log(weather)
+                const {name, wind, main: {temp}, weather: [conditions]} = weatherData
+                const {path, extension} = configJson.apiServices.openWeather.icon
+
+                this.setState({
+                    city: name,
+                    temperature: temp,
+                    icon: `${path}/${conditions.icon}.${extension}`,
+                    wind: parseBoolean(showWind) ? wind : undefined
+                })
             })
             .catch(console.error)
     },
 
+    getQueryParameters()
+    {
+        const {location} = this.props
+
+        return location.query
+    },
+
     render()
     {
+        const {city, temperature, icon, wind} = this.state
+        const {title} = this.getQueryParameters(location)
+
         return (
             <div className="widget-container">
-                Widget Container
+                <Widget title={title} location={city} temperature={temperature} wind={wind} icon={icon}/>
             </div>
         )
     }

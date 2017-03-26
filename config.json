@@ -4,6 +4,11 @@
       "apiKey": "450cb86f978f3867f0fde56c9b094595",
       "host": "http://api.openweathermap.org",
       "path": "data/2.5/weather",
+      "icon": {
+        "path": "http://openweathermap.org/img/w",
+        "extension": "png"
+      },
+      "unitFormats": ["metric", "imperial"],
       "queryParameters": {
         "latitude": "lat",
         "longitude": "lon",
