@@ -15,7 +15,7 @@ export default React.createClass({
             city: undefined,
             temperature: undefined,
             icon: undefined,
-            wind: undefined
+            wind: "none"
         }
     },
 
@@ -37,7 +37,7 @@ export default React.createClass({
                 this.setState({
                     city: name,
                     temperature: temp,
-                    icon: `${path}/${conditions.icon}.${extension}`,
+                    icon: `url(${path}/${conditions.icon}.${extension})`,
                     wind: parseBoolean(showWind) ? {
                             speed: getWindSpeed(units, wind.speed),
                             direction: getDirection(wind.deg)

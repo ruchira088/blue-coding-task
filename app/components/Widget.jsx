@@ -36,17 +36,15 @@ const WindInfo = ({speed, direction}) =>
 }
 
 const WeatherInfo = ({location, temperature, wind: {speed, direction}}) =>
-{
-    return (
-        <div className="weather-info">
-            <div className="weather-location">
-                { location }
-            </div>
-            <TemperatureDisplay temperature={temperature}/>
-            <WindInfo speed={speed} direction={direction}/>
+(
+    <div className="weather-info">
+        <div className="weather-location">
+            { location }
         </div>
-    )
-}
+        <TemperatureDisplay temperature={temperature}/>
+        <WindInfo speed={speed} direction={direction}/>
+    </div>
+)
 
 export default ({title = "Untitled", location, temperature, icon, wind = {}}) =>
 (
@@ -58,7 +56,7 @@ export default ({title = "Untitled", location, temperature, icon, wind = {}}) =>
         </div>
         <div className="weather-widget-body">
             <div className="widget-left-column">
-                <div className="weather-icon" style={{backgroundImage: `url(${icon})`}}>
+                <div className="weather-icon" style={{backgroundImage: icon}}>
                 </div>
             </div>
             <div className="widget-right-column">

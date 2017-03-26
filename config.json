@@ -1,4 +1,5 @@
 {
+  "httpPort": 8000,
   "apiServices": {
     "openWeather": {
       "apiKey": "450cb86f978f3867f0fde56c9b094595",
