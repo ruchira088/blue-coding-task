@@ -32,7 +32,8 @@ module.exports = {
         alias: {
             styles: path.join(appPath, "styles"),
             services: path.join(appPath, "services"),
-            libs: path.join(appPath, "libs")
+            libs: path.join(appPath, "libs"),
+            constants: path.join(appPath, "constants")
         }
     },
     plugins: [

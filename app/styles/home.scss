@@ -27,14 +27,14 @@
         .embed-code-container
         {
             flex: 2;
-
-            iframe
-            {
-                height: 200px;
-            }
         }
 
         .saved-widgets
+        {
+            flex: 1;
+        }
+
+        .empty-section
         {
             flex: 1;
         }

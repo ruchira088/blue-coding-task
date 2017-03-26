@@ -36,7 +36,12 @@ export default React.createClass(
         const {widgets, selected} = this.state
 
         const widgetPreviews = widgets.map((widgetProps, index) =>
-            <WidgetPreview {...widgetProps} onSelect={this.onWidgetSelect(widgetProps)} key={index}/>
+            <WidgetPreview
+                {...widgetProps}
+                selected={widgetProps == selected}
+                onSelect={this.onWidgetSelect(widgetProps)}
+                key={index}
+            />
         )
 
         return (
@@ -49,6 +54,7 @@ export default React.createClass(
                     <div className="embed-code-container">
                         <EmbedCodePane {...selected}/>
                     </div>
+                    <div className="empty-section"/>
                 </div>
 
                 <div className="widget-home-controls">

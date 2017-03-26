@@ -1,0 +1,29 @@
+.embed-code-pane
+{
+    margin: 10px;
+
+    .embed-code
+    {
+        border: 1px grey solid;
+        border-radius: 5px;
+        text-align: center;
+        padding: 20px;
+
+        .embed-code-preview
+        {
+            height: 210px;
+            border: none;
+        }
+
+        .embed-code-markup
+        {
+            text-align: center;
+
+            .embed-code-markup-title
+            {
+                text-align: justify;
+                padding-bottom: 20px;
+            }
+        }
+    }
+}

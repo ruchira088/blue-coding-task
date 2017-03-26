@@ -1,10 +1,11 @@
 import React from "react"
+import classNames from "classnames"
 
 import "styles/widget-preview.scss"
 
-export default ({title, units, showWind, onSelect}) =>
+export default ({title, units, showWind, onSelect, selected}) =>
 (
-    <div className="widget-preview" onClick={onSelect}>
+    <div className={classNames({selected}, "widget-preview")} onClick={onSelect}>
         <div className="preview-title">
             { title }
         </div>

@@ -1,4 +1,37 @@
 .radio-button
 {
     display: flex;
+    flex: 1;
+    cursor: pointer;
+
+    .radio-button-indicator
+    {
+        $dimension: 10px;
+
+        margin-top: 3px;
+        margin-right: 10px;
+        border-radius: $dimension;
+        height: $dimension;
+        width: $dimension;
+        position: relative;
+
+        &:before
+        {
+            $outerCircle: 18px;
+
+            position: absolute;
+            border-radius: $outerCircle;
+            height: $outerCircle;
+            width: $outerCircle;
+            border: 1px solid black;
+            content: "";
+            top: -5px;
+            left: -5px;
+        }
+
+        &.checked
+        {
+            background-color: #4B8FE1;
+        }
+    }
 }

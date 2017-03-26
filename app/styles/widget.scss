@@ -1,6 +1,6 @@
 .weather-widget
 {
-    width: 200px;
+    width: 250px;
     padding: 20px;
     background-color: #F4F4F4;
     border: 1px grey solid;
@@ -50,6 +50,17 @@
                 {
                     font-size: 24px;
                     font-weight: bold;
+                }
+
+                .wind-info
+                {
+                    display: flex;
+
+                    .wind-info-label
+                    {
+                        margin-right: 5px;
+                        color: grey;
+                    }
                 }
             }
         }

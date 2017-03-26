@@ -1,6 +1,6 @@
 import React from "react"
 import {getCurrentLocation} from "services/location"
-import {getWeather} from "services/weather"
+import {getWeather, getDirection, getWindSpeed} from "services/weather"
 import {parseBoolean} from "libs/object"
 import configJson from "../../config.json"
 import Widget from "./Widget.jsx"
@@ -38,7 +38,10 @@ export default React.createClass({
                     city: name,
                     temperature: temp,
                     icon: `${path}/${conditions.icon}.${extension}`,
-                    wind: parseBoolean(showWind) ? wind : undefined
+                    wind: parseBoolean(showWind) ? {
+                            speed: getWindSpeed(units, wind.speed),
+                            direction: getDirection(wind.deg)
+                        } : undefined
                 })
             })
             .catch(console.error)

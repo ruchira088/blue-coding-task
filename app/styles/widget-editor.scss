@@ -1,12 +1,47 @@
 .widget-editor
 {
+    border: 1px black solid;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F4F4F4;
+    border-radius: 4px;
+
+    .widget-editor-controls
+    {
+        .widget-editor-button
+        {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px;
+            width: 75px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            &:hover
+            {
+                opacity: 0.8;
+            }
+        }
+    }
+
     .input-section
     {
         display: block;
+        margin: 10px 0;
+
+        &.input-title-section
+        {
+            .title-field
+            {
+                padding: 4px;
+            }
+        }
 
         .input-section-title
         {
             display: block;
+            margin: 3px 0;
         }
 
         .input-section-field

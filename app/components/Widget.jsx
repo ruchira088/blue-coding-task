@@ -1,24 +1,52 @@
 import React from "react"
 
-const WeatherInfo = ({location, temperature, wind: {speed, deg}}) =>
-(
-    <div className="weather-info">
-        <div className="weather-location">
-            { location }
-        </div>
-        <div className="weather-temperature">
-            { temperature }
-        </div>
-        <div className="wind-info">
-            <div className="wind-speed">
-                { speed }
+const TemperatureDisplay = ({temperature}) =>
+{
+    if(temperature != undefined)
+    {
+        return (
+            <div className="temperature-display">
+                { temperature }&deg;
             </div>
-            <div className="wind-deg">
-                { deg }
+        )
+    } else
+    {
+        return null
+    }
+}
+
+const WindInfo = ({speed, direction}) =>
+{
+    if(speed != undefined)
+    {
+        return (
+            <div className="wind-info">
+                <div className="wind-info-label">
+                    Wind
+                </div>
+                <div className="wind-info-value">
+                    { direction } { speed }
+                </div>
             </div>
+        )
+    } else
+    {
+        return null
+    }
+}
+
+const WeatherInfo = ({location, temperature, wind: {speed, direction}}) =>
+{
+    return (
+        <div className="weather-info">
+            <div className="weather-location">
+                { location }
+            </div>
+            <TemperatureDisplay temperature={temperature}/>
+            <WindInfo speed={speed} direction={direction}/>
         </div>
-    </div>
-)
+    )
+}
 
 export default ({title = "Untitled", location, temperature, icon, wind = {}}) =>
 (

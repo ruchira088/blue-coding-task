@@ -1,7 +1,9 @@
 .widget-preview
 {
+    $background-color: #F4F4F4;
+
     border: solid 1px black;
-    background-color: #F4F4F4;
+    background-color: $background-color;
     margin: 10px;
     padding: 10px;
     border-radius: 4px;
@@ -9,7 +11,12 @@
 
     &:hover
     {
-        background-color: white;
+        background-color: darken($background-color, 10);
+    }
+
+    &.selected
+    {
+        background-color: darken($background-color, 20);
     }
 
    .preview-title
