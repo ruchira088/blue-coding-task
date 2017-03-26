@@ -1,10 +1,11 @@
 import React from "react"
+import {httpPort} from "../../config.json"
 import {ROUTE_NAMES, getPath} from "../Router.jsx"
 
 import "styles/embed-code-pane.scss"
 
 const getIFrameUrl = ({title, units, showWind}) =>
-    `${getPath(ROUTE_NAMES.WIDGET)}?title=${title}&units=${units}&showWind=${showWind}`
+    `http://localhost:${httpPort}${getPath(ROUTE_NAMES.WIDGET)}?title=${title}&units=${units}&showWind=${showWind}`
 
 const EmbedCodePaneBody = ({url}) =>
 (

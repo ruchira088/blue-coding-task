@@ -44,11 +44,19 @@ export default React.createClass(
             />
         )
 
+        const hint = (widgets.length > 0) ?
+            <div className="saved-widgets-hint">
+                Click on a widget to get more information
+            </div>
+            :
+            null
+
         return (
             <div className="widget-home">
 
                 <div className="widget-previews">
                     <div className="saved-widgets">
+                        { hint }
                         { widgetPreviews }
                     </div>
                     <div className="embed-code-container">

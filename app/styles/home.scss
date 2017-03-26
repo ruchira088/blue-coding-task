@@ -32,6 +32,11 @@
         .saved-widgets
         {
             flex: 1;
+
+            .saved-widgets-hint
+            {
+                font-size: 12px;
+            }
         }
 
         .empty-section

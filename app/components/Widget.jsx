@@ -6,7 +6,7 @@ const TemperatureDisplay = ({temperature}) =>
     {
         return (
             <div className="temperature-display">
-                { temperature }&deg;
+                { Math.round(temperature) }&deg;
             </div>
         )
     } else
