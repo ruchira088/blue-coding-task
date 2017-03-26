@@ -9,8 +9,7 @@
         "path": "http://openweathermap.org/img/w",
         "extension": "png"
       },
-      "defaultUnit": "metric",
-      "unitFormats": ["metric", "imperial"],
+      "defaultUnits": "metric",
       "queryParameters": {
         "latitude": "lat",
         "longitude": "lon",

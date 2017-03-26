@@ -5,7 +5,7 @@ import configJson from "../../config.json"
 
 const createWeatherService = config => (latitudeValue, longitudeValue, units) =>
 {
-    const {apiKey, host, path, defaultUnits, unitFormats, queryParameters} = config.apiServices.openWeather
+    const {apiKey, host, path, defaultUnits, queryParameters} = config.apiServices.openWeather
     const {latitude, longitude, appId} = queryParameters
 
     return axios.get(`${host}/${path}`, {
@@ -13,7 +13,9 @@ const createWeatherService = config => (latitudeValue, longitudeValue, units) =>
                 [latitude]: latitudeValue,
                 [longitude]: longitudeValue,
                 [appId]: apiKey,
-                units: unitFormats.includes(units) ? units : defaultUnits
+                units: Object.keys(CONSTANTS.UNITS)
+                    .map(key => CONSTANTS.UNITS[key])
+                    .includes(units) ? units : defaultUnits
             }
         })
         .then(({data}) => data)
